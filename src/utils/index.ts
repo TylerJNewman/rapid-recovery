@@ -3,15 +3,17 @@ import {message, notification} from 'antd'
 export const displaySuccessNotification = (
   message: string,
   description?: string,
+  duration?: number,
 ) => {
-  return notification['success']({
+  const config = {
     message,
     description,
-    placement: 'topLeft',
+    duration,
     style: {
       marginTop: 50,
     },
-  })
+  }
+  return notification.success(config)
 }
 
 export const displayErrorMessage = (error: string) => {
