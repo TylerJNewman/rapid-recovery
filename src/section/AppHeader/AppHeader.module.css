@@ -16,6 +16,11 @@
 .app_header__logo img {
   width: 36px;
 }
+
+.app_header__title {
+  margin-top: 0.5em;
+}
+
 .app_header__search_input {
   display: flex;
   align-items: center;
