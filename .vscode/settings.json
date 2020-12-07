@@ -1,0 +1,10 @@
+{
+  "filewatcher.commands": [
+    {
+      "match": "\\.less",
+      "isAsync": true,
+      "cmd": "cd ${workspaceRoot} && node less-styles-script.js && echo '${file} folder content Changed'",
+      "event": "onFolderChange"
+    }
+  ]
+}

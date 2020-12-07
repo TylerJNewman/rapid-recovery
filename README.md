@@ -183,3 +183,5 @@ To deploy your local project to Vercel, push it to GitHub/GitLab/Bitbucket and
 | [Vercel](https://vercel.com/)                                                | Cloud Platform to deploy instantly          |
 | [Ant Design](https://ant.design/)                                            | Design system for enterprise-level products |
 | [Google Sign-in](https://developers.google.com/identity/sign-in/web/sign-in) | OAuth 2.0 flow and token lifecycle          |
+
+https://github.com/mit123suki/next-ant-setup < refer to for antd config
