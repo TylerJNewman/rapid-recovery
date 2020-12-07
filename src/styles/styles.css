@@ -556,16 +556,16 @@ html {
   align-items: center;
   justify-content: center;
 }
-.app__affix-header {
+.app__affix_header {
   z-index: 99;
 }
-.app__affix-footer {
+.app__affix_footer {
   position: absolute;
   bottom: 10px;
   right: 10px;
 }
 @media (max-width: 36em) {
-  .app__affix-footer {
+  .app__affix_footer {
     display: none;
   }
 }

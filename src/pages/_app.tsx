@@ -5,16 +5,16 @@ import {useApollo} from '../utils/apollo'
 import {Viewer} from 'types'
 import Head from 'next/head'
 import {Layout, Affix} from 'antd'
+import 'antd/dist/antd.css'
+import 'styles/vars.css'
+import 'styles/global.css'
+import styles from 'styles/pages/app.module.css'
+import {AppHeader} from 'section'
+// import '../styles/styles.css' // turn on and off for reference for local
 import * as Sentry from '@sentry/react'
 import {init} from 'utils/sentry'
 
 init()
-
-import 'antd/dist/antd.css'
-import '../styles/vars.css'
-import '../styles/global.css'
-import {AppHeader} from 'section'
-// import '../styles/styles.css' // turn on and off for reference for local
 
 const initialViewer: Viewer = {
   id: null,
@@ -41,7 +41,7 @@ export default function App({Component, pageProps}: AppProps) {
       </Head>
       <ApolloProvider client={apolloClient}>
         <Layout id="app">
-          <Affix offsetTop={0} className="app__affix-header">
+          <Affix offsetTop={0} className={styles.app__affix_header}>
             <AppHeader setViewer={setViewer} viewer={viewer} />
           </Affix>
           <Component {...pageProps} setViewer={setViewer} viewer={viewer} />
