@@ -19,6 +19,7 @@ export const Google = {
   }),
   logIn: async (code: string) => {
     const {tokens} = await auth.getToken(code)
+    console.log({auth})
 
     auth.setCredentials(tokens)
 
