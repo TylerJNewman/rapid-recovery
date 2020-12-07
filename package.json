@@ -25,7 +25,7 @@
     "@zeit/next-source-maps": "0.0.4-canary.1",
     "antd": "4.9.1",
     "apollo-server-micro": "^2.16.1",
-    "babel-plugin-import": "1.13.0",
+    "babel-plugin-import": "^1.13.3",
     "cors": "^2.8.5",
     "cross-env": "^7.0.2",
     "dayjs": "1.8.28",
@@ -34,10 +34,9 @@
     "googleapis": "^65.0.0",
     "graphql": "^15.4.0",
     "mongodb": "^3.6.3",
-    "next": "latest",
+    "next": "v10.0.4-canary.2",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "sass": "^1.26.10"
+    "react-dom": "^16.7.0"
   },
   "browser": {
     "fs": false,

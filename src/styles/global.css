@@ -25,9 +25,9 @@ body {
 }
 
 #app {
-  position: relative;
+  /* position: relative; */
   background: #fff;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 .text-left {
