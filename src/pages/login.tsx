@@ -98,9 +98,9 @@ export const Login = ({setViewer}: Props) => {
             </span>
           </Title>
           <Title level={3} className={styles.log_in_card__intro_title}>
-            Log in to HomeAway!
+            Log in to Livewell.ai!
           </Title>
-          <Text>Sign in with Google to start booking available rentals!</Text>
+          <Text>Sign in with Google to start tracking your recovery!</Text>
         </div>
         <button
           onClick={handleAuthorize}
