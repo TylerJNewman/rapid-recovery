@@ -1,5 +1,5 @@
 export const User = () => {
-  return <h2>User</h2>
+  return <h2>Hello</h2>
 }
 
 export default User
