@@ -5,13 +5,13 @@ const {MONGODB_URI, MONGODB_DB} = process.env
 
 if (!MONGODB_URI) {
   throw new Error(
-    'Please define the MONGODB_URI environment variable inside .env.local',
+    'Please define the MONGODB_URI environment variable inside .env',
   )
 }
 
 if (!MONGODB_DB) {
   throw new Error(
-    'Please define the MONGODB_DB environment variable inside .env.local',
+    'Please define the MONGODB_DB environment variable inside .env',
   )
 }
 
@@ -41,8 +41,8 @@ export async function connectToDatabase(): Promise<DatabaseConnection> {
       })
       .then((db) => {
         conn.db = {
-          bookings: db.collection<Booking>('bookings'),
-          listings: db.collection<Listing>('listings'),
+          // bookings: db.collection<Booking>('bookings'),
+          // listings: db.collection<Listing>('listings'),
           users: db.collection<User>('users'),
         }
         cached.conn = conn
