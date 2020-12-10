@@ -37,7 +37,7 @@ const Item = ({content}) => {
 }
 
 const Home = () => {
-  const [active, setActive] = React.useState(null)
+  const [active, setActive] = React.useState('1 min')
 
   const handleClick = (id) => {
     setActive(id)
