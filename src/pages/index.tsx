@@ -37,16 +37,37 @@ const Item = ({content}) => {
 }
 
 const Home = () => {
+  const [active, setActive] = React.useState(null)
+
+  const handleClick = (id) => {
+    setActive(id)
+  }
   return (
     <Content>
       <div className={styles.section}>
         <Title className={styles.section_name}>Rapid Recovery</Title>
         <Row className={styles.buttons} justify="center">
-          {timeRanges.map(({content}) => (
-            <Button type="primary" shape="round" icon={<FieldTimeOutlined />}>
-              {content}
-            </Button>
-          ))}
+          <ul className={styles.anticons_list}>
+            {timeRanges.map(({content}) => {
+              const isActive = content === active ? styles.active : ''
+              return (
+                <li
+                  key={content}
+                  onClick={() => handleClick(content)}
+                  className={isActive}
+                >
+                  <div>
+                    <span className={styles.anticon}>
+                      <FieldTimeOutlined style={{fontSize: '36px'}} />
+                    </span>
+                    <span className={styles.anticon_desc}>
+                      <span className={styles.ant_badge}>{content}</span>
+                    </span>
+                  </div>
+                </li>
+              )
+            })}
+          </ul>
         </Row>
       </div>
       <div className={styles.items}>

@@ -46,3 +46,89 @@
   margin: 1em;
   background-color: #f5f5f5;
 }
+
+ul.anticons_list {
+  margin: 10px 0;
+  overflow: hidden;
+  direction: ltr;
+  list-style: none;
+  width: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+ul.anticons_list li:hover .anticon {
+  transform: scale(1.4);
+}
+
+ul.anticons_list li.active .anticon {
+  transform: scale(1.4);
+}
+
+ul.anticons_list li {
+  margin: 3px 20px;
+  padding: 10px 0;
+  position: relative;
+  float: left;
+  width: 16.66%;
+  height: 100px;
+  overflow: hidden;
+  color: #555;
+  text-align: center;
+  list-style: none;
+  background-color: inherit;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+ul.anticons_list li .anticon_desc {
+  display: block;
+  font-family: Lucida Console, Consolas, Monaco, Andale Mono, Ubuntu Mono,
+    monospace;
+  white-space: nowrap;
+  text-align: center;
+  -webkit-transform: scale(0.83);
+  transform: scale(0.83);
+}
+
+ul.anticons_list li:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  line-height: 110px;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  content: 'Copied!';
+}
+
+ul.anticons_list li:hover .ant_badge {
+  color: #fff;
+}
+
+ul.anticons_list li:hover {
+  color: #fff;
+  background-color: #1890ff;
+}
+
+ul.anticons_list li.active {
+  color: #fff;
+  background-color: #1890ff;
+}
+
+.anticon {
+  margin: 12px 0 8px;
+  display: inline-block;
+  color: inherit;
+  font-style: normal;
+  line-height: 0;
+  text-align: center;
+  text-transform: none;
+  vertical-align: -0.125em;
+  text-rendering: optimizeLegibility;
+}
