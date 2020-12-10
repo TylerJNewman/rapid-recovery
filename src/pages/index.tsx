@@ -1,46 +1,63 @@
-import {initializeApollo} from '../utils/apollo'
-import gql from 'graphql-tag'
-import {useQuery} from '@apollo/client'
-import {connectToDatabase} from 'apollo/database'
+import * as React from 'react'
+import {Skeleton, Typography, Layout, Row, Button} from 'antd'
+import styles from 'styles/pages/home.module.css'
+import {FieldTimeOutlined} from '@ant-design/icons'
 
-// const ListingsQuery = gql`
-//   query ListingsQuery {
-//     listings {
-//       id
-//       title
-//       image
-//       address
-//       price
-//       numOfGuests
-//       numOfBeds
-//       numOfBaths
-//       rating
-//     }
-//   }
-// `
+const {Content} = Layout
+const {Title} = Typography
 
-const Index = () => {
-  // const {
-  //   data: {listings},
-  // } = useQuery(ListingsQuery)
-  return <h2>Home</h2>
+const timeRanges = [
+  {
+    content: '1 min',
+  },
+  {
+    content: '2 min',
+  },
+  {
+    content: '10 min',
+  },
+]
 
-  // return <Listings title="Airbnb Clone Listings" />
+const rapidCategories = [
+  {
+    content: 'Body',
+  },
+  {
+    content: 'Mind',
+  },
+]
+
+const Item = ({content}) => {
+  return (
+    <a>
+      <Skeleton.Image style={{width: 80, height: 80}} />
+      <Title level={4}>{content}</Title>
+    </a>
+  )
 }
 
-// export async function getServerSideProps() {
-//   const context = await connectToDatabase()
-//   const apolloClient = initializeApollo(null, context)
+const Home = () => {
+  return (
+    <Content>
+      <div className={styles.section}>
+        <Title className={styles.section_name}>Rapid Recovery</Title>
+        <Row className={styles.buttons} justify="center">
+          {timeRanges.map(({content}) => (
+            <Button type="primary" shape="round" icon={<FieldTimeOutlined />}>
+              {content}
+            </Button>
+          ))}
+        </Row>
+      </div>
+      <div className={styles.items}>
+        <Row className={styles.medium_items} justify="center">
+          {rapidCategories.map(({content}) => (
+            <Item key={content} content={content} />
+          ))}
+        </Row>
+      </div>
+    </Content>
+  )
+}
 
-//   await apolloClient.query({
-//     query: ListingsQuery,
-//   })
-
-//   return {
-//     props: {
-//       initialApolloState: apolloClient.cache.extract(),
-//     },
-//   }
-// }
-
-export default Index
+export default Home

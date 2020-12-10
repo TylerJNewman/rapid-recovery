@@ -25,10 +25,9 @@ export const AppHeader = ({viewer, setViewer}: Props) => {
           </Link>
         </div>
         <Title level={4} className={styles.app_header__title}>
-          Livewell.ai
+          <Link href="/">Livewell.ai</Link>
         </Title>
       </div>
-
       <div className={styles.app_header__menu_section}>
         <MenuItems viewer={viewer} setViewer={setViewer} />
       </div>
