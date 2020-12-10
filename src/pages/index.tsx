@@ -28,13 +28,13 @@ const rapidCategories = [
   {
     content: 'Body',
     style: {backgroundColor: 'rgb(250, 173, 20)'},
-    icon: <Wave style={{width: '100%', color: '#fff'}} fill="#fff" />,
+    icon: <Footstep style={{width: '100%', color: '#fff'}} fill="#fff" />,
     path: 'body',
   },
   {
     content: 'Mind',
     style: {backgroundColor: 'rgb(245, 34, 45)'},
-    icon: <Footstep style={{width: '100%', color: '#fff'}} fill="#fff" />,
+    icon: <Wave style={{width: '100%', color: '#fff'}} fill="#fff" />,
     path: 'mind',
   },
 ]
