@@ -1,4 +1,6 @@
 import * as React from 'react'
+import Wave from '../../public/wave.svg'
+import Footstep from '../../public/footstep.svg'
 import {Skeleton, Typography, Layout, Row, Button} from 'antd'
 import styles from 'styles/pages/home.module.css'
 import {FieldTimeOutlined} from '@ant-design/icons'
@@ -21,17 +23,23 @@ const timeRanges = [
 const rapidCategories = [
   {
     content: 'Body',
+    style: {backgroundColor: 'rgb(250, 173, 20)'},
+    icon: <Wave style={{width: '100%', color: '#fff'}} fill="#fff" />,
   },
   {
     content: 'Mind',
+    style: {backgroundColor: 'rgb(245, 34, 45)'},
+    icon: <Footstep style={{width: '100%', color: '#fff'}} fill="#fff" />,
   },
 ]
 
-const Item = ({content}) => {
+const Item = ({content, style, icon}) => {
   return (
-    <a>
-      <Skeleton.Image style={{width: 80, height: 80}} />
-      <Title level={4}>{content}</Title>
+    <a style={style}>
+      <span className="anticon">{icon}</span>
+      <Title level={4} style={{color: '#fff'}}>
+        {content}
+      </Title>
     </a>
   )
 }
@@ -72,8 +80,8 @@ const Home = () => {
       </div>
       <div className={styles.items}>
         <Row className={styles.medium_items} justify="center">
-          {rapidCategories.map(({content}) => (
-            <Item key={content} content={content} />
+          {rapidCategories.map(({content, style, icon}) => (
+            <Item key={content} content={content} style={style} icon={icon} />
           ))}
         </Row>
       </div>

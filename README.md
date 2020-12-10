@@ -179,7 +179,6 @@ To deploy your local project to Vercel, push it to GitHub/GitLab/Bitbucket and
 | [Sentry](https://sentry.io/)                                                 | Cloud-based error monitoring                |
 | [Stripe](https://www.docker.com/)                                            | Payment processing platform                 |
 | [Typescript](https://typescriptlang.org/)                                    | Language for application-scale JavaScript   |
-| [Ant Design](https://ant.design/)                                            | Design system for enterprise-level products |
 | [Vercel](https://vercel.com/)                                                | Cloud Platform to deploy instantly          |
 | [Ant Design](https://ant.design/)                                            | Design system for enterprise-level products |
 | [Google Sign-in](https://developers.google.com/identity/sign-in/web/sign-in) | OAuth 2.0 flow and token lifecycle          |
