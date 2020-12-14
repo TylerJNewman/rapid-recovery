@@ -1,6 +1,7 @@
 import {VideoCard} from 'components/'
-import {Row, Col} from 'antd'
+import {Row, Col, Button} from 'antd'
 import React from 'react'
+import Link from 'next/link'
 
 const content = [
   `This stretch lengthens and strengthens three key areas–the ankles, hips, and thoracic spine.`,
@@ -36,6 +37,11 @@ const OneMinuteBody = () => {
             title={title}
             content={content}
           />
+          <Link href="/complete">
+            <Button block type="primary" size={'large'}>
+              Complete
+            </Button>
+          </Link>
         </Col>
       </Row>
     </>
