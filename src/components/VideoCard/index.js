@@ -1,7 +1,8 @@
-import {Card, Carousel, Typography} from 'antd'
+import {Card, Carousel, Typography, Modal} from 'antd'
 import {Info, Share, Star} from 'react-feather'
 import styles from './VideoCard.module.css'
 import titleStyles from 'styles/pages/1min.module.css'
+import {displaySuccessNotification} from 'utils'
 import Title from 'antd/lib/typography/Title'
 const Video = () => {
   return (
@@ -14,9 +15,29 @@ const Video = () => {
   )
 }
 
+function info({title, content}) {
+  Modal.info({
+    title,
+    content: (
+      <div>
+        <p>some messages...some messages...</p>
+        <p>some messages...some messages...</p>
+      </div>
+    ),
+    onOk() {
+      // displaySuccessNotification("You've have earned points!")
+    },
+  })
+}
+
 const {Text} = Typography
 
 export const VideoCard = ({title, subtitle, text, images, imageHeight}) => {
+  const content = (
+    <div>
+      <p>{text}</p>
+    </div>
+  )
   return (
     <div className={styles.card_cover}>
       <div className="videoWrapper">
@@ -46,7 +67,11 @@ export const VideoCard = ({title, subtitle, text, images, imageHeight}) => {
         // }
         actions={[
           <Star size={20} strokeWidth={1} />,
-          <Info size={20} strokeWidth={1} />,
+          <Info
+            size={20}
+            strokeWidth={1}
+            onClick={() => info({title, content})}
+          />,
           <Share size={20} strokeWidth={1} />,
         ]}
       >
@@ -54,7 +79,6 @@ export const VideoCard = ({title, subtitle, text, images, imageHeight}) => {
           <Title level={5} className={titleStyles.title}>
             World's Greatest Stretch
           </Title>
-          {/* {text}{' '} */}
         </div>
       </Card>
     </div>

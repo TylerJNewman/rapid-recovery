@@ -3,6 +3,7 @@ import {Row, Col} from 'antd'
 import React from 'react'
 
 const text = `The World’s Greatest Stretch lengthens and strengthens three key areas–the ankles, hips, and thoracic spine. It’s a great movement to do throughout the day because it targets so many muscles in a relatively short period–hip flexors, hamstrings, adductors, glutes, calves, quads, thoracic spine, chest, shoulders, lower back, and obliques. Ease into the movement and move fluidly through the positions. Don't worry if you can't get into the full range of motion just yet.. we will get there with consistent practice. Doing The World's Greatest Stretch for one or two minutes for every hour sitting down will yield incredible results over time.`
+const title = `The World’s Greatest Stretch`
 const Video = () => {
   return (
     <iframe
@@ -13,6 +14,7 @@ const Video = () => {
     ></iframe>
   )
 }
+
 const OneMinuteBody = () => {
   return (
     <>
@@ -27,6 +29,7 @@ const OneMinuteBody = () => {
             video={[<Video />]}
             images={['/unsplash/1.jpg', '/unsplash/15.jpg']}
             imageHeight={309}
+            title={title}
             text={text}
           />
         </Col>
