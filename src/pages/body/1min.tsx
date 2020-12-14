@@ -30,7 +30,7 @@ const OneMinuteBody = () => {
       >
         <Col xs={22} sm={22} lg={16}>
           <VideoCard
-            video={[<Video />]}
+            videos={[<Video />]}
             images={['/unsplash/1.jpg', '/unsplash/15.jpg']}
             imageHeight={309}
             title={title}

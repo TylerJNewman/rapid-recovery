@@ -4,16 +4,6 @@ import styles from './VideoCard.module.css'
 import titleStyles from 'styles/pages/1min.module.css'
 import {displaySuccessNotification} from 'utils'
 import Title from 'antd/lib/typography/Title'
-const Video = () => {
-  return (
-    <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/_kW3RTmwufc"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    ></iframe>
-  )
-}
 
 function info({title, content}) {
   const formattedContent = (
@@ -39,16 +29,19 @@ const {Text} = Typography
 
 export const VideoCard = ({
   title,
-  subtitle,
+  videos = [],
   content = [],
   images,
   imageHeight,
 }) => {
   return (
     <div className={styles.card_cover}>
-      <div className="videoWrapper">
-        <Video />
-      </div>
+      {videos.map((video, index) => (
+        <div key={index}>
+          <div className="videoWrapper">{video}</div>
+        </div>
+      ))}
+
       <Card
         // cover={
         //   <div className={styles.cover} style={{height: imageHeight}}>
