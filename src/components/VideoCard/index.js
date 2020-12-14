@@ -1,11 +1,11 @@
 import {Card, Carousel, Typography, Modal} from 'antd'
-import {Info, Share, Star} from 'react-feather'
+import {Heart, Share, Star} from 'react-feather'
 import styles from './VideoCard.module.css'
 import titleStyles from 'styles/pages/1min.module.css'
 import {displaySuccessNotification} from 'utils'
 import Title from 'antd/lib/typography/Title'
 
-function info({title, content}) {
+function info({content}) {
   const formattedContent = (
     <div>
       {content.map((paragraph, index) => (
@@ -17,7 +17,7 @@ function info({title, content}) {
     </div>
   )
   Modal.info({
-    title,
+    title: 'How does this help me?',
     content: formattedContent,
     onOk() {
       // displaySuccessNotification("You've have earned points!")
@@ -65,16 +65,15 @@ export const VideoCard = ({
         //   </div>
         // }
         actions={[
-          <Star size={20} strokeWidth={1} />,
-          <Info
-            size={20}
-            strokeWidth={1}
-            onClick={() => info({title, content})}
-          />,
-          <Share size={20} strokeWidth={1} />,
+          <Star size={30} strokeWidth={1} />,
+          <Heart size={30} strokeWidth={1} />,
+          <Share size={30} strokeWidth={1} />,
         ]}
       >
-        <div className={styles.description}>
+        <div
+          className={styles.description}
+          onClick={() => info({title, content})}
+        >
           <Title level={2} className={titleStyles.title}>
             World's Greatest Stretch
           </Title>
