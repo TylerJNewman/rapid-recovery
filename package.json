@@ -37,7 +37,8 @@
     "mongodb": "^3.6.3",
     "next": "v10.0.4-canary.2",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "react-feather": "^2.0.9"
   },
   "browser": {
     "fs": false,
