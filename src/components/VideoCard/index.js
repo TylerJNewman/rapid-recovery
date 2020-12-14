@@ -1,8 +1,17 @@
 import {Card, Carousel, Typography, Modal} from 'antd'
-import {Heart, Share, Star} from 'react-feather'
 import styles from './VideoCard.module.css'
 import titleStyles from 'styles/pages/1min.module.css'
 import {displaySuccessNotification} from 'utils'
+import {
+  SmileTwoTone,
+  HeartTwoTone,
+  CheckCircleTwoTone,
+  CheckCircleFilled,
+  SmileFilled,
+  HeartFilled,
+  ShareAltOutlined,
+  RadarChartOutlined,
+} from '@ant-design/icons'
 import Title from 'antd/lib/typography/Title'
 
 function info({content}) {
@@ -24,6 +33,55 @@ function info({content}) {
     },
   })
 }
+
+const SmileToggle = () => {
+  const [on, toggleOn] = React.useState(false)
+  const toggle = () => toggleOn(!on)
+  if (on) {
+    return <SmileFilled onClick={toggle} style={{fontSize: 30}} />
+  } else {
+    return <SmileTwoTone onClick={toggle} style={{fontSize: 30}} />
+  }
+}
+
+const HeartToggle = () => {
+  const [on, toggleOn] = React.useState(false)
+  const toggle = () => toggleOn(!on)
+  if (on) {
+    return (
+      <HeartFilled onClick={toggle} style={{color: '#eb2f96', fontSize: 30}} />
+    )
+  } else {
+    return (
+      <HeartTwoTone
+        onClick={toggle}
+        twoToneColor="#eb2f96"
+        style={{fontSize: 30}}
+      />
+    )
+  }
+}
+
+// const CircleToggle = () => {
+//   const [on, toggleOn] = React.useState(false)
+//   const toggle = () => toggleOn(!on)
+//   if (on) {
+//     return (
+//       <CheckCircleFilled
+//         onClick={toggle}
+//         style={{color: '#52c41a', fontSize: 30}}
+//       />
+//     )
+//   } else {
+//     return (
+//       <CheckCircleTwoTone
+//         onClick={toggle}
+//         twoToneColor="#52c41a"
+//         style={{fontSize: 30}}
+//       />
+//     )
+//   }
+// }
 
 const {Text} = Typography
 
@@ -65,15 +123,12 @@ export const VideoCard = ({
         //   </div>
         // }
         actions={[
-          <Star size={30} strokeWidth={1} />,
-          <Heart size={30} strokeWidth={1} />,
-          <Share size={30} strokeWidth={1} />,
+          <RadarChartOutlined style={{fontSize: 30}} />,
+          <HeartToggle />,
+          <ShareAltOutlined style={{fontSize: 30}} />,
         ]}
       >
-        <div
-          className={styles.description}
-          onClick={() => info({title, content})}
-        >
+        <div className={styles.description} onClick={() => info({content})}>
           <Title level={2} className={titleStyles.title}>
             World's Greatest Stretch
           </Title>
