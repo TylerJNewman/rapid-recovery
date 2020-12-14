@@ -3,7 +3,7 @@ import Wave from '../../public/wave.svg'
 import Link from 'next/link'
 import Footstep from '../../public/footstep.svg'
 import {Skeleton, Typography, Layout, Row, Button} from 'antd'
-import styles from 'styles/pages/home.module.css'
+import styles from 'styles/pages/index.module.css'
 import {FieldTimeOutlined} from '@ant-design/icons'
 
 const {Content} = Layout
