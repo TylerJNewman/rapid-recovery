@@ -16,14 +16,19 @@ const Video = () => {
 }
 
 function info({title, content}) {
+  const formattedContent = (
+    <div>
+      {content.map((paragraph, index) => (
+        <p key={index} className="mb-3">
+          {' '}
+          {paragraph}
+        </p>
+      ))}
+    </div>
+  )
   Modal.info({
     title,
-    content: (
-      <div>
-        <p>some messages...some messages...</p>
-        <p>some messages...some messages...</p>
-      </div>
-    ),
+    content: formattedContent,
     onOk() {
       // displaySuccessNotification("You've have earned points!")
     },
@@ -32,12 +37,13 @@ function info({title, content}) {
 
 const {Text} = Typography
 
-export const VideoCard = ({title, subtitle, text, images, imageHeight}) => {
-  const content = (
-    <div>
-      <p>{text}</p>
-    </div>
-  )
+export const VideoCard = ({
+  title,
+  subtitle,
+  content = [],
+  images,
+  imageHeight,
+}) => {
   return (
     <div className={styles.card_cover}>
       <div className="videoWrapper">
