@@ -1,4 +1,4 @@
-import {Card, Carousel, Typography, Modal} from 'antd'
+import {Card, Carousel, Typography, Modal, Spin} from 'antd'
 import styles from './VideoCard.module.css'
 import titleStyles from 'styles/pages/1min.module.css'
 import {displaySuccessNotification} from 'utils'
@@ -13,6 +13,39 @@ import {
   RadarChartOutlined,
 } from '@ant-design/icons'
 import Title from 'antd/lib/typography/Title'
+import {Loading} from 'components'
+
+const Video = ({src}, ref) => {
+  const [loading, setLoading] = React.useState(true)
+  const iframeRef = React.useRef(null)
+
+  React.useEffect(() => {
+    if (iframeRef.current) setLoading(false)
+  }, [iframeRef.current])
+
+  const iframe = (
+    <iframe
+      ref={iframeRef}
+      width="560"
+      height="315"
+      src={src}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    ></iframe>
+  )
+
+  return (
+    <>
+      <div style={{display: `${loading ? 'none' : 'block'}`}}>{iframe}</div>
+      <Loading
+        spinning={loading}
+        styles={{
+          position: 'absolute',
+          top: '-20%',
+        }}
+      ></Loading>
+    </>
+  )
+}
 
 function info({content}) {
   const formattedContent = (
@@ -34,16 +67,6 @@ function info({content}) {
   })
 }
 
-const SmileToggle = () => {
-  const [on, toggleOn] = React.useState(false)
-  const toggle = () => toggleOn(!on)
-  if (on) {
-    return <SmileFilled onClick={toggle} style={{fontSize: 30}} />
-  } else {
-    return <SmileTwoTone onClick={toggle} style={{fontSize: 30}} />
-  }
-}
-
 const HeartToggle = () => {
   const [on, toggleOn] = React.useState(false)
   const toggle = () => toggleOn(!on)
@@ -62,66 +85,19 @@ const HeartToggle = () => {
   }
 }
 
-// const CircleToggle = () => {
-//   const [on, toggleOn] = React.useState(false)
-//   const toggle = () => toggleOn(!on)
-//   if (on) {
-//     return (
-//       <CheckCircleFilled
-//         onClick={toggle}
-//         style={{color: '#52c41a', fontSize: 30}}
-//       />
-//     )
-//   } else {
-//     return (
-//       <CheckCircleTwoTone
-//         onClick={toggle}
-//         twoToneColor="#52c41a"
-//         style={{fontSize: 30}}
-//       />
-//     )
-//   }
-// }
-
 const {Text} = Typography
 
-export const VideoCard = ({
-  title,
-  videos = [],
-  content = [],
-  // images,
-  // imageHeight,
-}) => {
+export const VideoCard = ({title, videos = [], content = []}) => {
   return (
     <div className={styles.card_cover}>
-      {videos.map((video, index) => (
+      {videos.map((src, index) => (
         <div key={index}>
-          <div className="videoWrapper">{video}</div>
+          <div className="videoWrapper">
+            <Video src={src} />
+          </div>
         </div>
       ))}
-
       <Card
-        // cover={
-        //   <div className={styles.cover} style={{height: imageHeight}}>
-        //     <Carousel
-        //       // autoplay
-        //       // autoplaySpeed={6000}
-        //       className="rounded-top overflow-hidden"
-        //       className={styles.carousel}
-        //     >
-        //       {/* {images.map((image, index) => (
-        //         <div key={index}>
-        //           <div
-        //             style={{
-        //               backgroundImage: `url(${image})`,
-        //               height: `${imageHeight}px`,
-        //             }}
-        //           />
-        //         </div>
-        //       ))} */}
-        //     </Carousel>
-        //   </div>
-        // }
         actions={[
           <RadarChartOutlined style={{fontSize: 30}} />,
           <HeartToggle />,

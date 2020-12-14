@@ -5,14 +5,7 @@ import styles from 'styles/pages/complete.module.css'
 import Link from 'next/link'
 import {SmileOutlined} from '@ant-design/icons'
 import {ArrowRight} from 'react-feather'
-
-const Loading = () => (
-  <div className={styles.wrapper}>
-    <Space size="middle">
-      <Spin size="large" />
-    </Space>
-  </div>
-)
+import {Loading} from 'components'
 
 const Complete = () => {
   const [loading, setLoading] = React.useState(true)
