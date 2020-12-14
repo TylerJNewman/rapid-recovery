@@ -75,7 +75,7 @@ export const VideoCard = ({
         ]}
       >
         <div className={styles.description}>
-          <Title level={5} className={titleStyles.title}>
+          <Title level={2} className={titleStyles.title}>
             World's Greatest Stretch
           </Title>
         </div>

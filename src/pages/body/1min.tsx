@@ -1,7 +1,12 @@
 import {VideoCard} from 'components/'
+import {ArrowRight} from 'react-feather'
 import {Row, Col, Button} from 'antd'
 import React from 'react'
 import Link from 'next/link'
+import {Typography} from 'antd'
+import {CheckCircleOutlined} from '@ant-design/icons'
+
+const {Title} = Typography
 
 const content = [
   `This stretch lengthens and strengthens three key areas–the ankles, hips, and thoracic spine.`,
@@ -38,8 +43,8 @@ const OneMinuteBody = () => {
             content={content}
           />
           <Link href="/complete">
-            <Button block type="primary" size={'large'}>
-              Complete
+            <Button block type="primary" size={'large'} style={{height: 96}}>
+              <ArrowRight style={{color: 'inherit'}} size={48} />
             </Button>
           </Link>
         </Col>

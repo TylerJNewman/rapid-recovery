@@ -4,6 +4,7 @@ import {useTimeout} from 'utils'
 import styles from 'styles/pages/complete.module.css'
 import Link from 'next/link'
 import {SmileOutlined} from '@ant-design/icons'
+import {ArrowRight} from 'react-feather'
 
 const Loading = () => (
   <div className={styles.wrapper}>
@@ -29,7 +30,9 @@ const Complete = () => {
         title="Great, well done!"
         extra={
           <Link href="/">
-            <Button type="primary">Next</Button>
+            <Button block type="primary" size={'large'} style={{height: 96}}>
+              <ArrowRight style={{color: 'inherit'}} size={48} />
+            </Button>
           </Link>
         }
       />
