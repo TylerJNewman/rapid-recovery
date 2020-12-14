@@ -3,6 +3,7 @@ import React from 'react'
 import {useTimeout} from 'utils'
 import styles from 'styles/pages/complete.module.css'
 import Link from 'next/link'
+import {SmileOutlined} from '@ant-design/icons'
 
 const Loading = () => (
   <div className={styles.wrapper}>
@@ -24,17 +25,13 @@ const Complete = () => {
   return (
     <div className={styles.wrapper}>
       <Result
-        status="success"
-        title="Complete"
-        subTitle="Congrats on your progress!"
-        extra={[
+        icon={<SmileOutlined />}
+        title="Great, well done!"
+        extra={
           <Link href="/">
-            <Button type="primary">Go Home</Button>
-          </Link>,
-          <Link href="/progress">
-            <Button>Progress</Button>
-          </Link>,
-        ]}
+            <Button type="primary">Next</Button>
+          </Link>
+        }
       />
     </div>
   )
