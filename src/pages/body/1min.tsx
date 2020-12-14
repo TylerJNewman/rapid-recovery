@@ -35,13 +35,7 @@ const OneMinuteBody = () => {
         style={{height: '100vh'}}
       >
         <Col xs={22} sm={22} lg={16}>
-          <VideoCard
-            videos={[<Video />]}
-            images={['/unsplash/1.jpg', '/unsplash/15.jpg']}
-            imageHeight={309}
-            title={title}
-            content={content}
-          />
+          <VideoCard videos={[<Video />]} title={title} content={content} />
           <Link href="/complete">
             <Button block type="primary" size={'large'} style={{height: 96}}>
               <ArrowRight style={{color: 'inherit'}} size={48} />

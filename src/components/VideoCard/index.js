@@ -31,8 +31,8 @@ export const VideoCard = ({
   title,
   videos = [],
   content = [],
-  images,
-  imageHeight,
+  // images,
+  // imageHeight,
 }) => {
   return (
     <div className={styles.card_cover}>

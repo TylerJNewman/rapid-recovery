@@ -7,6 +7,9 @@
   /* height: 4.5em; */
   overflow: hidden;
 }
+.description h2 {
+  margin-bottom: 0;
+}
 
 .description:after {
   content: '';
